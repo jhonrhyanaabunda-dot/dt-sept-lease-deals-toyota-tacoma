@@ -420,12 +420,6 @@
     font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
     color: var(--red-deep);
   }
-  .hero-photo.full-bleed .credit {
-    position: absolute;
-    bottom: 24px; right: clamp(20px, 4vw, 56px);
-    color: var(--white);
-    text-shadow: 0 1px 8px rgba(0,0,0,.45);
-  }
 
   /* ---------- Article body grid (sticky TOC + column) ---------- */
   .article-grid {
@@ -505,7 +499,7 @@
   .gutter .chip .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
   /* ---------- Section + typography ---------- */
-  section.s { scroll-margin-top: 32px; padding: 64px 0; border-top: 1px solid var(--rule); }
+  section.s { scroll-margin-top: 32px; padding: 52px 0; border-top: 1px solid var(--rule); }
   section.s:first-of-type { border-top: none; padding-top: 8px; }
   .section-num {
     display: flex; align-items: baseline; gap: 16px;
@@ -565,6 +559,7 @@
     letter-spacing: -0.005em;
     text-wrap: balance;
   }
+  blockquote.pull:last-child { margin-bottom: 0; border-bottom: none; }
   blockquote.pull cite {
     display: block;
     margin-top: 24px;
@@ -635,7 +630,8 @@
   .spec-strip .item:last-child { border-right: none; }
   .spec-strip .num { font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1.05; color: var(--red-deep); letter-spacing: -0.015em; font-feature-settings: "lnum"; min-height: calc(38px * 1.05); margin-bottom: 14px; white-space: nowrap; }
   .spec-strip .num small { font-size: 14px; color: var(--ink-soft); font-weight: 400; margin-left: 3px; letter-spacing: 0; }
-  .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2); display: flex; align-items: flex-start; justify-content: center; text-align: center; }
+  .spec-strip .lbl { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0; line-height: 1.5; min-height: calc(11px * 1.5 * 2);
+    display: block; text-align: center; }
 
   /* Stats variant: short numeric headers, centered, compact */
   .spec-strip.stats {
@@ -644,7 +640,8 @@
   .spec-strip.stats .item { align-items: center; text-align: center; padding: 22px 16px; }
   .spec-strip.stats .num { font-size: 34px; line-height: 1; min-height: 0; margin-bottom: 12px; white-space: nowrap; }
   .spec-strip.stats .num small { font-size: 14px; letter-spacing: 0; margin-left: 4px; }
-  .spec-strip.stats .lbl { min-height: 0; display: flex; align-items: flex-start; justify-content: center; text-align: center; }
+  .spec-strip.stats .lbl { min-height: 0;
+    display: block; text-align: center; }
 
   /* ---------- Safety badge ---------- */
   .safety-banner {
@@ -1292,7 +1289,7 @@
   <div class="wrap">
     <div class="eyebrow"><span class="pip"></span> Lease &amp; Finance · Dalton Toyota National City</div>
     <h1>Lease deals on the Toyota <em>Tacoma</em> at Dalton Toyota.</h1>
-    <p class="deck">Looking for lease deals on a Toyota Tacoma near San Diego? Dalton Toyota National City keeps fresh Tacoma lease and finance offers running every month at 2400 National City Blvd, with terms built around your real budget and your real miles. Line up a payment that fits, then drive home with confidence - see this month's live Tacoma offers at toyotadalton.com or call our sales desk.</p>
+    <p class="deck">Looking for Toyota Tacoma lease deals near San Diego? We run fresh Tacoma lease and finance offers every month at 2400 National City Blvd, with terms built around your real budget and miles. See this month's live offers at toyotadalton.com.</p>
 
     <div class="hero-meta">
       <div class="item"><div class="lbl">Address</div><div class="val">2400 National City Blvd<small>National City, CA 91950</small></div></div>
@@ -1310,7 +1307,6 @@
          fetchpriority="high"
          width="1920"
          height="960" />
-    <span class="credit">DALTON TOYOTA NATIONAL CITY · TACOMA</span>
     <figcaption class="visually-hidden">A Toyota Tacoma at Dalton Toyota National City, the mid-size truck available to lease or finance on the Mile of Cars.</figcaption>
   </figure>
 </header>
@@ -1343,8 +1339,10 @@
       <section class="s" id="why-lease">
         <div class="section-num"><span>01</span><span>From the sales desk</span></div>
         <h2 class="section-h">Why lease a Toyota Tacoma <em>in National City</em>.</h2>
-        <p class="lede">The Tacoma is built for the way Southern California drives - the I-5 and 805 grind into downtown San Diego, the run east toward the trailheads, the weekend pull out to the desert. It is a mid-size truck that earns its keep, which is exactly why so many National City drivers want a newer one in the driveway without committing to a decade of ownership.</p>
-        <p>Leasing solves a specific problem: it keeps you in a current-generation Tacoma with a predictable monthly payment and full factory warranty coverage for the entire term. You are paying for the years you drive the truck hardest, not for the long tail of ownership where repair bills creep in. <em>Reviewed and posted by the Dalton Toyota National City sales and finance team.</em></p>
+        <p class="lede">The Tacoma is built for Southern California driving: the I-5 grind downtown, the run east to the trailheads, the weekend haul to the desert. That's why so many drivers want a newer one without a decade of ownership.</p>
+        <p>Leasing solves a specific problem: it keeps you in a current-generation Tacoma with a predictable payment and full factory warranty for the whole term. You pay for the years you drive the truck hardest, not the long tail where repair bills creep in.</p>
+
+        <p><em>Reviewed and posted by the Dalton Toyota National City sales and finance team.</em></p>
 
         <h3>A lease tends to make sense when you:</h3>
         <ul class="bullets">
@@ -1370,7 +1368,7 @@
       <section class="s" id="what-leasing">
         <div class="section-num"><span>02</span><span>The vehicle</span></div>
         <h2 class="section-h">What you're leasing: <em>the 2026 Tacoma</em>.</h2>
-        <p class="lede">The Tacoma was fully redesigned for the 2024 model year, and the truck on our lot today rides on Toyota's TNGA-F global truck platform - the same architecture under the Tundra and Sequoia. That matters for a lease because the warranty you lean on for two or three years is covering a newer, stiffer, more capable truck than the generation it replaced.</p>
+        <p class="lede">The Tacoma was redesigned for 2024 and rides on Toyota's TNGA-F platform, the architecture under the Tundra and Sequoia. On a lease that matters: the warranty covers a newer, stiffer truck.</p>
         <p>Here are the verifiable details worth knowing before you sign a Tacoma lease, pulled from Toyota's official specifications rather than sales-floor memory.</p>
 
         <div class="trims">
@@ -1407,7 +1405,7 @@
         <p>Properly equipped, the 2026 Tacoma is rated to tow up to 6,500 pounds according to Toyota's official capability figures. We confirmed that number against Toyota's spec sheet before quoting it, because tow ratings swing hard by configuration.</p>
 
         <h3>Trim and configuration drive the payment</h3>
-        <p>This is the part most lease ads skip: an SR5 Double Cab 4x2 and a TRD Off-Road 4x4 are different trucks at different payments, and the same advertised "Tacoma lease" headline rarely applies to both. When you tell us how you use the truck - daily commuter, weekend overlander, job-site hauler - we match you to the configuration that hits your target payment instead of upselling you into a trim you'll resent at month three.</p>
+        <p>Most lease ads skip this: an SR5 Double Cab 4x2 and a TRD Off-Road 4x4 are different trucks at different payments, and one headline rarely covers both. Tell us how you use the truck and we'll match you to the configuration that hits your target payment.</p>
       </section>
 
       <!-- §03 How Tacoma lease deals work at Dalton Toyota -->
@@ -1425,10 +1423,10 @@
           <li><strong>Trade-in equity</strong> - value in your current vehicle can reduce your cost to start</li>
         </ul>
 
-        <p>Toyota's lease programs change month to month - the advertised payment you saw in June may not exist in August. That is not a gimmick; residuals and incentives genuinely reset on a national cadence. The honest move is to confirm the current Tacoma offer before you drive over. You can see live deals at <a href="https://www.toyotadalton.com/" rel="noopener" target="_blank">toyotadalton.com</a> or call our sales team at <a class="tel" href="tel:+16194745573">(619) 474-5573</a>.</p>
+        <p>Toyota's lease programs change month to month, so the payment advertised in June may not exist in August. That isn't a gimmick; residuals and incentives reset on a national cadence. Confirm current offers at <a href="https://www.toyotadalton.com/" rel="noopener" target="_blank">toyotadalton.com</a> or call <a class="tel" href="tel:+16194745573">(619) 474-5573</a>.</p>
 
         <h3>The mileage decision people get wrong</h3>
-        <p>Here is the contrarian truth our finance desk repeats every week: most people guess their annual mileage too low to make the payment look good, then pay for it at lease-end. Excess-mileage charges add up fast, and they are not negotiable once the truck comes back. We would rather quote you a 15,000-mile-a-year lease that costs a few dollars more per month than hand you a cheap 10,000-mile headline you'll blow past by spring.</p>
+        <p>Our finance desk repeats this every week: most people guess their annual mileage too low. It makes the payment look good, but excess-mileage charges add up fast and aren't negotiable at turn-in. We'd rather quote 15,000 miles a year than a 10,000-mile limit you'll blow past by spring.</p>
 
         <blockquote class="pull">
           When a customer told us last month she "barely drives," we pulled her current odometer against her registration date, found she was averaging closer to 14,000 a year, and steered her to the higher allowance.
@@ -1445,8 +1443,8 @@
 
         <ul class="bullets">
           <li><strong>Factory warranty for the full term.</strong> A 24-to-36-month lease sits comfortably inside Toyota's new-vehicle warranty, so covered repairs aren't your problem. That is a real part of why leasing feels low-risk on a truck you intend to work.</li>
-          <li><strong>ToyotaCare scheduled maintenance.</strong> New Toyotas typically include a no-cost scheduled-maintenance plan covering the first two years or 25,000 miles of factory-recommended service, per Toyota's published program terms at <a href="https://www.toyota.com/toyotacare/" rel="noopener" target="_blank">toyota.com/toyotacare</a>. On a lease, that means your oil changes and inspections through the early life of the truck are usually handled - confirm current program coverage with our service desk when you sign.</li>
-          <li><strong>Wear-and-tear standards at lease-end.</strong> "Normal" wear is allowed; damage is not. Curbed wheels, cracked glass, bald tires, and dents become charges at turn-in. This is exactly why we run the recall and condition check up front - a clean truck returns clean.</li>
+          <li><strong>ToyotaCare scheduled maintenance.</strong> New Toyotas typically include a no-cost plan covering the first two years or 25,000 miles of factory-recommended service, per <a href="https://www.toyota.com/toyotacare/" rel="noopener" target="_blank">toyota.com/toyotacare</a>. On a lease that usually covers your oil changes and inspections; confirm current coverage with our service desk.</li>
+          <li><strong>Wear-and-tear standards at lease-end.</strong> "Normal" wear is allowed; damage is not, so curbed wheels, cracked glass, bald tires, and dents become charges at turn-in. That's why we run the condition check up front.</li>
           <li><strong>A disposition fee, in most cases.</strong> Many Toyota leases carry an end-of-term disposition fee unless you lease or buy another Toyota. We tell you the number before you sign so it is never a surprise.</li>
           <li><strong>Gap protection.</strong> Lease agreements commonly include or offer gap coverage, which protects you if the truck is totaled and you owe more than its value. Ask us to confirm what's built into your specific contract.</li>
         </ul>
@@ -1462,7 +1460,7 @@
       <aside class="cta-inline" aria-labelledby="cta-inline-heading">
         <div class="eyebrow">Dalton Toyota National City</div>
         <h3 id="cta-inline-heading">Get this month's Tacoma lease numbers.</h3>
-        <p class="lede">Call our sales desk and we'll pull the live Toyota Financial Services program for the exact Tacoma you want, structure the mileage to your real driving, and run a lease and a finance scenario side by side. No headline payment that falls apart at signing.</p>
+        <p class="lede">Call our sales desk and we'll pull the live Toyota Financial Services program for the Tacoma you want, then run lease and finance side by side. No headline payment that falls apart at signing.</p>
         <div class="actions">
           <a class="btn primary" href="https://www.toyotadalton.com/searchnew.aspx?ModelAndTrim=Tacoma" rel="noopener" target="_blank">Browse Tacoma inventory <span class="arrow">→</span></a>
           <a class="btn ghost" href="tel:+16194745573">Call sales · (619) 474-5573</a>
@@ -1479,14 +1477,14 @@
       <section class="s" id="local">
         <div class="section-num"><span>05</span><span>The local picture</span></div>
         <h2 class="section-h">Leasing a Tacoma in National City: <em>the local picture</em>.</h2>
-        <p class="lede">National City anchors the Mile of Cars, which is both a blessing and a trap for truck shoppers. The blessing: real competition, real selection. The trap: it is easy to cross-shop a headline lease payment from one lot to the next without ever comparing the actual structure underneath - term, miles, money down, and money factor.</p>
+        <p class="lede">National City's Mile of Cars is both a blessing and a trap for truck shoppers. The blessing is real competition and real selection. The trap is cross-shopping headline payments without comparing term, miles, money down, and money factor.</p>
         <p>Two "Tacoma leases" at the same monthly number can be wildly different deals once you account for what you put down and how many miles you're allowed.</p>
 
         <blockquote class="pull">
           Our advice for shopping the Mile of Cars: compare the full structure, not the headline. Ask every store for the term, the annual mileage cap, the drive-off total, and the residual.
         </blockquote>
 
-        <p>When you bring those four numbers to our sales desk, we'll line our Tacoma offer up against whatever you've been quoted and tell you honestly where we win and where we don't. A San Diego truck buyer driving the 5 and the 805 daily has different mileage needs than someone parked downtown all week, and the right lease reflects that - not a one-size headline.</p>
+        <p>Bring those four numbers to our sales desk and we'll line our Tacoma offer up against whatever you've been quoted, then tell you where we win and where we don't. Someone driving the 5 daily has different mileage needs than someone parked downtown all week.</p>
 
         <p>Because we've been on this stretch since 1996, we also tend to have a realistic read on inbound allocation. If the exact Tacoma trim, cab, or color you want isn't on the ground today, we'll give you a straight timeline on what's coming instead of pushing you into whatever happens to be sitting on the lot.</p>
       </section>
@@ -1533,13 +1531,13 @@
         <h2 class="section-h">Tacoma reliability and safety: <em>why the lease risk is low</em>.</h2>
         <p class="lede">One reason a Tacoma lease feels safe is the truck's track record. We verified the current safety picture ourselves rather than quoting marketing copy.</p>
 
-        <p>The Insurance Institute for Highway Safety publishes Tacoma crash-test results at <a href="https://www.iihs.org/" rel="noopener" target="_blank">iihs.org</a>, and the National Highway Traffic Safety Administration posts federal star ratings and any open recalls at <a href="https://www.nhtsa.gov/" rel="noopener" target="_blank">nhtsa.gov</a>. Before we hand a leased Tacoma to a customer, our service team verifies the VIN through NHTSA's recall lookup to confirm there are no open campaigns - a five-minute check that protects you for the entire term.</p>
+        <p>The IIHS publishes Tacoma crash-test results at <a href="https://www.iihs.org/" rel="noopener" target="_blank">iihs.org</a>, and NHTSA posts federal star ratings and open recalls at <a href="https://www.nhtsa.gov/" rel="noopener" target="_blank">nhtsa.gov</a>. Before we hand over a leased Tacoma, our service team runs the VIN through NHTSA's recall lookup. It's a five-minute check that protects you for the whole term.</p>
 
         <blockquote class="pull">
           We've inspected every incoming fourth-gen Tacoma on this lot, and our advisors walked the build sheet on a TRD Off-Road last week so we could quote the payload honestly instead of guessing.
         </blockquote>
 
-        <p>Standard Toyota Safety Sense on the current Tacoma bundles forward-collision warning, automatic emergency braking, lane-departure alert, and adaptive cruise - features Toyota lists as standard across the lineup at toyota.com. For a leased truck, that matters twice: it protects you on the I-5, and a clean, undamaged truck means a smoother lease-end return with no surprise damage charges.</p>
+        <p>Toyota Safety Sense is standard on the current Tacoma, bundling forward-collision warning, automatic emergency braking, lane-departure alert, and adaptive cruise. On a lease that matters twice: it protects you on the I-5, and an undamaged truck returns cleanly at lease-end.</p>
       </section>
 
       <!-- §08 Getting started · visit Dalton Toyota National City -->
@@ -1556,7 +1554,7 @@
           <li><strong>Sign and drive</strong> - leave National City in your new Tacoma, ready for adventures as you are.</li>
         </ul>
 
-        <p>We're on the Mile of Cars at <strong>2400 National City Blvd, National City, CA 91950</strong>, an easy drive from San Diego, Chula Vista, and the South Bay. Dalton Toyota National City is family-run, has earned the Chamber of Commerce Mile of Cars Dealership of the Year recognition, and we bring that same standard to every Tacoma lease we write.</p>
+        <p>We're on the Mile of Cars at <strong>2400 National City Blvd, National City, CA 91950</strong>, an easy drive from San Diego, Chula Vista, and the South Bay. We're family-run and have earned Chamber of Commerce Mile of Cars Dealership of the Year.</p>
 
         <div class="spec-strip stats">
           <div class="item"><div class="num"><a class="tel" href="https://www.google.com/search?q=dalton+toyota+national+city&amp;oq=dalton+toyota&amp;gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOzIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIGCAYQRRg8MgYIBxBFGDzSAQg2OTU0ajBqN6gCALACAA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#lrd=0x80d95214bb1b2def:0x1f768b06c3c86578,1,,,," rel="noopener" target="_blank">4.6<small> ★</small></a></div><div class="lbl"><a class="tel" href="https://www.google.com/search?q=dalton+toyota+national+city&amp;oq=dalton+toyota&amp;gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOzIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIGCAYQRRg8MgYIBxBFGDzSAQg2OTU0ajBqN6gCALACAA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#lrd=0x80d95214bb1b2def:0x1f768b06c3c86578,1,,,," rel="noopener" target="_blank">Google rating across <span class="review-count">6,277</span> reviews</a></div></div>
@@ -1620,7 +1618,7 @@
   <div class="wrap">
     <div class="eyebrow">Dalton Toyota National City</div>
     <h2>A family-run Toyota store on the Mile of Cars <em>since 1996</em>.</h2>
-    <p class="band-deck">We've been part of National City since 1996, recognized as Chamber of Commerce Mile of Cars Dealership of the Year - a track record built on straightforward numbers, deal by deal. We keep fresh Toyota Tacoma lease and finance offers running every month at 2400 National City Blvd.</p>
+    <p class="band-deck">We've been part of National City since 1996 and were named Chamber of Commerce Mile of Cars Dealership of the Year. Fresh Tacoma lease and finance offers run every month at 2400 National City Blvd.</p>
 
     <div class="trust-grid">
       <div class="item">
@@ -1785,7 +1783,13 @@
           <div style="font-size:12px; color:var(--muted); margin-top:10px; letter-spacing:0.04em;">Dalton Toyota National City · 2400 National City Blvd, National City, CA 91950</div>
         </div>
 
-        <p style="font-size:15px; color:var(--ink-soft); max-width:660px;">2026 Toyota Tacoma powertrain, towing, fuel-economy, and safety details described from Toyota's published specifications at toyota.com. Verify any configuration's window-sticker fuel economy at fueleconomy.gov, and check crash-test results and open recalls at iihs.org and nhtsa.gov. Lease terms, mileage allowances, down payment, money factor, residual values, and monthly figures vary by trim, credit tier, and Toyota Financial Services' current regional program, and reset each month - they should be confirmed in writing before any deal is signed. For this month's exact Tacoma lease and finance numbers, call Sales at <a class="tel" href="tel:+16194745573"><strong>(619) 474-5573</strong></a>.</p>
+        <ul class="bullets" style="font-size:15px; color:var(--ink-soft); max-width:660px;">
+          <li><strong>Specs &amp; towing.</strong> 2026 Tacoma powertrain, towing, fuel-economy, and safety details come from Toyota's published specifications at toyota.com.</li>
+          <li><strong>Fuel economy &amp; safety.</strong> Verify window-sticker figures at fueleconomy.gov; check crash tests and open recalls at iihs.org and nhtsa.gov.</li>
+          <li><strong>Lease terms.</strong> Mileage, down payment, money factor, residuals, and monthly figures vary by trim and credit tier and reset each month.</li>
+        </ul>
+
+        <p style="font-size:15px; color:var(--ink-soft); max-width:660px;">Confirm any of the above in writing before signing. For this month's exact Tacoma numbers, call Sales at <a class="tel" href="tel:+16194745573"><strong>(619) 474-5573</strong></a>.</p>
 
         <p style="font-size:15px; color:var(--ink-soft); max-width:660px;"><em>If a question about leasing or financing a Toyota Tacoma at Dalton Toyota National City is not answered here, call <a class="tel" href="tel:+16194745573">(619) 474-5573</a> and ask for a sales advisor, or browse current Tacoma inventory and offers at <a href="https://www.toyotadalton.com/" rel="noopener" target="_blank">toyotadalton.com</a>.</em></p>
 
